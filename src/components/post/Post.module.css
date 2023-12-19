@@ -1,0 +1,14 @@
+.div{
+    border: 2px solid rgb(167, 166, 166);
+    border-radius: 9px;
+    background-image: radial-gradient(ellipse at top left, #d1c0f6, #4d249a);
+}
+
+.name{
+    color: rgb(49, 7, 156);
+    font-size: 24px;
+}
+
+.body{
+    font-size: 20px;
+}
