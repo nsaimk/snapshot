@@ -4,29 +4,24 @@ import NewPost from "../newpost/NewPost"
 import { useState } from "react"
 import Modal from "../modal/Modal"
 
-const List = () => {
+const List = ({ isPosting, onStopPosting }) => {
 
     const [bodyValue, setBodyValue] = useState('')
     const [textValue, setTextValue] = useState('')
-    const [isModalVisible, setIsModalVisible] = useState(true)
 
     const handleBody = (event) => {
         setBodyValue(event.target.value)
     }
+
     const handleText = (event) => {
         setTextValue(event.target.value)
-        
-    }
-
-    const hideModalHandler = () => {
-        setIsModalVisible(false)
     }
 
     // this is a better practise than ternay code inside the return
     let modalContent;
-    if(isModalVisible){
+    if(isPosting){
         modalContent = (
-            <Modal onClose={hideModalHandler}>
+            <Modal onClose={onStopPosting}>
                 <NewPost onBodyChange={handleBody} onTextChange={handleText} />
             </Modal>
         )
